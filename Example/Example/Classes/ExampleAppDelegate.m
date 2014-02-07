@@ -24,12 +24,12 @@ static const int ddLogLevel = LOG_LEVEL_WARN;
 @synthesize window;
 
 - (void)configureLogger {
-    PSDDFormatter *psLogger = [[[PSDDFormatter alloc] init] autorelease];
+    PSDDFormatter *psLogger = [[PSDDFormatter alloc] init];
     [[DDTTYLogger sharedInstance] setLogFormatter:psLogger];
     
     [DDLog addLogger:[DDTTYLogger sharedInstance]];
     
-    DDFileLogger *fileLogger = [[[DDFileLogger alloc] init] autorelease];
+    DDFileLogger *fileLogger = [[DDFileLogger alloc] init];
     fileLogger.rollingFrequency = 60 * 60 * 24; // 24 hour rolling
     fileLogger.logFileManager.maximumNumberOfLogFiles = 7;
     [DDLog addLogger:fileLogger];
@@ -43,7 +43,7 @@ static const int ddLogLevel = LOG_LEVEL_WARN;
     [self configureLogger];
     
     DDLogInfo(@"Hello from the Logger!");
-    self.window.rootViewController = [[[UITableViewController alloc] init] autorelease];
+    self.window.rootViewController = [[UITableViewController alloc] init];
     [self.window makeKeyAndVisible];    
     DDLogWarn(@"I am a warning!");
     
@@ -76,9 +76,5 @@ static const int ddLogLevel = LOG_LEVEL_WARN;
 - (void)applicationDidReceiveMemoryWarning:(UIApplication *)application {
 }
 
-- (void)dealloc {
-    [window release];
-    [super dealloc];
-}
 
 @end

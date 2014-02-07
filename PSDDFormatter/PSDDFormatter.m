@@ -33,9 +33,5 @@
   return [NSString stringWithFormat:@"%@(%@) %@ %@ <%d>", dateAndTime, [logMessage threadID], logLevel, logMsg, logMessage->lineNumber];
 }
 
-- (void)dealloc {
-  [dateFormatter release];
-  [super dealloc];
-}
 
 @end
