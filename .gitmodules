@@ -1,6 +1,6 @@
 [submodule "NSLogger"]
 	path = NSLogger
-url=git@github.com:iosphere/NSLogger.git
+	url=git@github.com:iosphere/NSLogger.git
 [submodule "CocoaLumberjack"]
 	path = CocoaLumberjack
 	url = https://github.com/robbiehanson/CocoaLumberjack.git
